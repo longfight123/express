@@ -15,6 +15,13 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/random', (req, res) => {
+    let data = {
+        randomNumber: Math.floor(Math.random() * 5)
+    };
+    res.render('random', data);
+})
+
 app.use((request, response) => {
     console.log('Received a request on port ' + port);
     console.log('Request is ', request);
